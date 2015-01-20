@@ -41,7 +41,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-<<<<<<< HEAD
     respond_to do |format|
       if @user.save
         format.html { redirect_to users_url,
@@ -52,7 +51,6 @@ class UsersController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @user.errors, 
           status: :unprocessable_entity }
-=======
 
     respond_to do |format|
       if @user.save
@@ -62,7 +60,6 @@ class UsersController < ApplicationController
       else
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
->>>>>>> 833e84eeef67515505c37d5cd6b0d36b65dd31e6
       end
     end
   end
@@ -74,11 +71,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-<<<<<<< HEAD
         format.html { redirect_to users_url,
-=======
         format.html { redirect_to(users_url,
->>>>>>> 833e84eeef67515505c37d5cd6b0d36b65dd31e6
           notice: "User #{@user.name} was successfully updated." }
         format.json { head :ok }
       else

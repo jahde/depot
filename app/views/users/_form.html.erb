@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="depot_form">
 
 <%= form_for(@user) do |f| %>
@@ -6,13 +5,11 @@
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> 
         prohibited this user from being saved:</h2>
-=======
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
->>>>>>> 833e84eeef67515505c37d5cd6b0d36b65dd31e6
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -21,7 +18,6 @@
     </div>
   <% end %>
 
-<<<<<<< HEAD
   <fieldset>
   <legend>Enter User Details</legend>
 
@@ -51,21 +47,4 @@
 </div>
 
 
-=======
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :hashed_password %><br />
-    <%= f.text_field :hashed_password %>
-  </div>
-  <div class="field">
-    <%= f.label :salt %><br />
-    <%= f.text_field :salt %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
->>>>>>> 833e84eeef67515505c37d5cd6b0d36b65dd31e6
+

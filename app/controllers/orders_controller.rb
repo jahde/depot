@@ -57,7 +57,7 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
         Notifier.order_received(@order).deliver
         format.html { redirect_to(store_url, :notice =>
-          'Thank you for your order.') }
+          I18n.t('.thanks')) }
         # format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.xml { render xml: @order, status: :created,
           location: @order }

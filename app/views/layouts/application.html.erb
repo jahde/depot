@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jahde's Online Book Store</title>
+  <%= stylesheet_link_tag "scaffolds" %>
+  <%= stylesheet_link_tag "depot", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%#= favicon_link_tag '/depot/public/favicon.ico' %>
+</head>
+<body id="store">
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Jahde's Bookshelf" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+<!-- START_HIGHLIGHT -->
+      <!-- START:hidden_div -->
+      <% if @cart %>
+        <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+          <%= render @cart %>
+        <% end %>
+      <% end %>
+    <!-- END:hidden_div -->
+
+<!-- END_HIGHLIGHT -->
+      <ul>
+        <li><a href="http://www....">Home</a><br /></li>
+        <li><a href="http://www..../faq">Questions</a><br /></li>
+        <li><a href="http://www..../news">News</a><br /></li>
+        <li><a href="http://www..../contact">Contact</a><br /></li>
+      </ul>
+      <span style="color:#bfb;
+  font-size:small;">
+        <%= Time.now.strftime("%I:%M %p") %>
+      </span>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>
+
